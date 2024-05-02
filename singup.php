@@ -16,33 +16,32 @@
 
  </style>
 <body>
-
-    <div class="container1">
-        <h1> Регистрация</h1>
-        <form action="" method="post">
-            <label class="label-container">Логин:</label> <input class="input-container" type="text" name="login" placeholder="введите логин" ><br>
-            <label class="label-container">Эл.Почта:</label> <input class="input-container" type="email" name="email" placeholder="введите email" ><br>
-            <label class="label-container">пароль:</label> <input class="input-container" type="password" id="password-input" name="password" placeholder="введите пароль"><br>
-            <label class="label1">Показать пароль</label><input type="checkbox" class="password-checkbox">
-            <input class="hidden" type = "hidden" name = "form" value = "registration"><br>
-            <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
-            <script>
-                $('body').on('click', '.password-checkbox', function()
-                {
-                    if ($(this).is(':checked'))
+    <?php require_once "blocks/header.php";?>
+        <div class="container1">
+            <h1> Регистрация</h1>
+            <form action="check_post_login.php" method="post">
+                <label class="label-container">Логин:</label> <input class="input-container" type="text" name="login" placeholder="введите логин" ><br>
+                <label class="label-container">Эл.Почта:</label> <input class="input-container" type="email" name="email" placeholder="введите email" ><br>
+                <label class="label-container">пароль:</label> <input class="input-container" type="password" id="password-input" name="password" placeholder="введите пароль"><br>
+                <label class="label1">Показать пароль</label><input type="checkbox" class="password-checkbox">
+                <input class="hidden" type = "hidden" name = "form" value = "registration"><br>
+                <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+                <script>
+                    $('body').on('click', '.password-checkbox', function()
                     {
-                        $('#password-input').attr('type', 'text');
-                    } else
-                    {
-                        $('#password-input').attr('type', 'password');
-                    }
-                });
-            </script>
-            <button type="submit" class="btn btn-success">Зарегестрироваться</button>
-            <button onclick="history.back();" class="btn btn-danger">Назад на главную</button>
-        </form>
-
-    </div>
+                        if ($(this).is(':checked'))
+                        {
+                            $('#password-input').attr('type', 'text');
+                        } else
+                        {
+                            $('#password-input').attr('type', 'password');
+                        }
+                    });
+                </script>
+                <button type="submit" class="btn btn-success">Зарегестрироваться</button>
+                <button onclick="history.back();" class="btn btn-danger">Назад на главную</button>
+            </form>
+        </div>
 </body>
 </html>
 

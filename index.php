@@ -10,14 +10,9 @@
     <link rel="stylesheet" href= "style.css">
 </head>
 <body>
+    <?php require_once "blocks/header.php";?>
     <div class="container">
-    <header>
-        <a href="contac.php">Контакты</a> |
-        <a href="index.php">Главная</a> |
-        <a href="about.php">Не  очем</a> |
-        <a href="singup.php">Регистрация</a> |
-        <a href="entrance.php">Вход</a>
-    </header>
+
     <h1>ГЛАВНАЯ</h1>
         <p>sait o ks 2</p>
         <p> вчера вышло обнова вернули дус 2 я радЪ</p>
