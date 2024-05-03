@@ -33,7 +33,7 @@ session_start();
 
 ?>
 
- <footer> Вск права защищены &copy; 2055</footer>
+    <?php require_once "blocks/footer.php";?>
 </body>
 </html>
 

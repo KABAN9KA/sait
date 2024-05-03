@@ -7,9 +7,17 @@
                         <img src="unnamed.jpg" width="84px" height="67px" alt="тут логотип">
                         <li><a href="index.php">Главная</a></li>
                         <li><a href="contac.php">Контакты</a></li>
-                        <li><a href="about.php">Не очем</a></li>
-                        <li><a href="singup.php">Регистрация</a></li>
-                        <li><a href="entrance.php">Вход</a></li>
+                        <li><a href="about.php">Все карты</a></li>
+
+                        <?php
+                            if(isset($_COOKIE['login'])) {
+                                echo '<li><a href="user_personal_account.php">Личный кабинет</a></li>';
+                            }
+                            else {
+                                echo '<li><a href="singup.php">Регистрация</a></li>
+                                      <li><a href="entrance.php">Вход</a></li>';
+                            }
+                        ?>
                     </ul>
                 </div>
             </nav>

@@ -15,9 +15,9 @@
     <?php require_once "blocks/header.php";?>
         <div class="container1">
             <h1> Вход</h1>
-                <form action="" method="post">
+                <form action="vhandlog/auth.php" method="post">
                     <label class="label-container">Логин:</label> <input class="input-container" type="text" name="login" placeholder="введите логин" ><br>
-                    <label class="label-container">пароль:</label> <input class="input-container" type="password" id="password-input" name="password" placeholder="введите пароль"><br>
+                    <label class="label-container">Пароль:</label> <input class="input-container" type="password" id="password-input" name="password" placeholder="введите пароль"><br>
                     <label class="label1">Показать пароль</label><input type="checkbox" class="password-checkbox">
                     <input class="hidden" type = "hidden" name = "form" value = "registration"><br>
                     <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
@@ -36,5 +36,6 @@
                     <button type="submit" class="btn btn-success">Войти</button>
                 </form>
         </div>
+    <?php require_once "blocks/footer.php";?>
 </body>
 </html>
