@@ -72,10 +72,8 @@ body {
     line-height: 107.9%;
     text-transform: lowercase;
 }
-.lk {
-    margin-left: 500px;
+.lk h1,a,p {
     color: #03088c;
-    opacity: 0.6;
     text-decoration: none;
     padding:10px ;
     transition:all .07s ease-in-out ;
@@ -85,6 +83,18 @@ body {
     font-weight: 400;
     font-size: 45px;
     line-height: 107.9%;
+}
+.lk {
+    margin-top: 25px;
+    border-radius: 10px;
+    margin-left: 500px;
+    width: 800px;
+    height: 380px;
+    background: white;
+}
+.lk label {
+    width: 150px;
+    padding-left: 10px;
 }
 .maps {
     display: flex;

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <header>
     <div class="header">
         <div class="header__container">
@@ -10,13 +11,15 @@
                         <li><a href="about.php">Все карты</a></li>
 
                         <?php
-                            if(isset($_COOKIE['login'])) {
+                       // unset($_COOKIE['login']);
+                        if(isset($_SESSION['login'])) {
                                 echo '<li><a href="user_personal_account.php">Личный кабинет</a></li>';
                             }
                             else {
                                 echo '<li><a href="singup.php">Регистрация</a></li>
                                       <li><a href="entrance.php">Вход</a></li>';
                             }
+
                         ?>
                     </ul>
                 </div>
