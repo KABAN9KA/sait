@@ -24,7 +24,7 @@ body {
     width: 450px;
     height: 50px;
 }
-.btn-success {
+.lk_change button {
     margin-left: 122px;
 }
 .password-checkbox {
@@ -89,12 +89,21 @@ body {
     border-radius: 10px;
     margin-left: 500px;
     width: 800px;
-    height: 380px;
+    height: 820px;
     background: white;
 }
-.lk label {
+.lk img{
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+}
+.lk_change label {
     width: 150px;
     padding-left: 10px;
+}
+.lk_upload button {
+    margin-left: 300px;
+    margin-top: -165px;
 }
 .maps {
     display: flex;

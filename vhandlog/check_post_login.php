@@ -3,9 +3,10 @@
     $login = trim(filter_var($_POST['login'], FILTER_SANITIZE_SPECIAL_CHARS));
     $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $password = trim(filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS));
+    $avatar = 'noavatar.png';
 
-    if(strlen($login) < 5){
-        echo "Логин должен быть больше 5 символов!";
+    if(strlen($login) < 3){
+        echo "Логин должен быть больше 3 символов!";
         exit;
     }
     elseif (strlen($password) < 6) {
@@ -26,8 +27,8 @@
     //подключение к бд экспериментальное
     require "db.php";
     //insert
-    $sql = 'INSERT INTO users(login, password, email) VALUES(?,?,?)';
+    $sql = 'INSERT INTO users(login, password, email, avatar) VALUES(?,?,?,?)';
     $query = $pdo->prepare($sql);
-    $query->execute([$login, $password, $email]);
+    $query->execute([$login, $password, $email, $avatar]);
 
 

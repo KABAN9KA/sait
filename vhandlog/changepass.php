@@ -1,5 +1,6 @@
 <?php
-    require "db.php";
+    session_start();
+
     $password = trim(filter_var($_POST['password_old'], FILTER_SANITIZE_SPECIAL_CHARS));
     $new_pass = trim(filter_var($_POST['password_new'], FILTER_SANITIZE_SPECIAL_CHARS));
     $conf_pass = trim(filter_var($_POST['password_confirm'], FILTER_SANITIZE_SPECIAL_CHARS));
@@ -15,10 +16,12 @@
     $salt = "fwafo3pawf90p[-_+)fw02fpo2p3pkl2[k5i";
     $new_pass = md5($salt.$new_pass);
 
+    require "db.php";
+
 //    тут над дописать обновление пароля
-    $sql = 'UPDATE id FROM users WHERE login = ? AND password = ?';
+    $sql = 'UPDATE users SET password= ? WHERE login = ?';
     $query = $pdo->prepare($sql);
-    $query->execute([$new_pass]);
+    $query->execute([$new_pass, $_SESSION['login']]);
 
-
+    echo 'parol izmenen check bd';
 //    echo "$password.<br>.$new_pass.<br>.$conf_pass";
