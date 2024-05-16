@@ -22,12 +22,12 @@
     $sql = 'SELECT id FROM users WHERE login = ? AND password = ?';
     $query = $pdo->prepare($sql);
     $query->execute([$login, $password]);
-
+    print_r($query->rowCount());
     if($query->rowCount() == 0){
         echo 'такого пользователя нит!';
     }
-    else {
-//        setcookie('login', $login, time() + 120, "/");
-        $_SESSION['login'] = $login;
-        header('Location: /user_personal_account.php');
-    }
+
+//    else {
+//        $_SESSION['login'] = $login;
+//        header('Location: /user_personal_account.php');
+//    }

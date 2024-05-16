@@ -9,9 +9,7 @@
                         <li><a href="index.php">Главная</a></li>
                         <li><a href="contac.php">Контакты</a></li>
                         <li><a href="about.php">Все карты</a></li>
-                        <li><a href="213.php">Все</a></li>
                         <?php
-                       // unset($_COOKIE['login']);
                         if(isset($_SESSION['login'])) {
                                 echo '<li><a href="user_personal_account.php">Личный кабинет</a></li>';
                             }

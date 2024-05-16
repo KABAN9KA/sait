@@ -3,14 +3,20 @@
     $login = trim(filter_var($_POST['login'], FILTER_SANITIZE_SPECIAL_CHARS));
     $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $password = trim(filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS));
+    $conf_password = trim(filter_var($_POST['conf_password'], FILTER_SANITIZE_SPECIAL_CHARS));
+
     $avatar = 'noavatar.png';
 
     if(strlen($login) < 3){
         echo "Логин должен быть больше 3 символов!";
         exit;
     }
-    elseif (strlen($password) < 6) {
+    elseif ((strlen($password) && strlen($conf_password))< 6) {
         echo "Пароль должен быть больше 6 символов!";
+        exit;
+    }
+    elseif ($password !== $conf_password){
+        echo 'пароли не совпадают!';
         exit;
     }
     elseif (strlen($email) < 2 && str_contains($email, '@')){
@@ -22,7 +28,7 @@
     }
     //пароль
     $salt = "fwafo3pawf90p[-_+)fw02fpo2p3pkl2[k5i";
-    $password = md5($salt.$password);
+    $conf_password = md5($salt.$conf_password);
 
     //подключение к бд экспериментальное
     require "db.php";
