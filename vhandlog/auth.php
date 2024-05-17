@@ -19,15 +19,13 @@
     require "db.php";
 
     //select
-    $sql = 'SELECT id FROM users WHERE login = ? AND password = ?';
+    $sql = 'SELECT id FROM users WHERE login = ?';
     $query = $pdo->prepare($sql);
-    $query->execute([$login, $password]);
-    print_r($query->rowCount());
+    $query->execute([$login]);
     if($query->rowCount() == 0){
         echo 'такого пользователя нит!';
     }
-
-//    else {
-//        $_SESSION['login'] = $login;
-//        header('Location: /user_personal_account.php');
-//    }
+    else {
+        $_SESSION['login'] = $login;
+        header('Location: /user_personal_account.php');
+   }

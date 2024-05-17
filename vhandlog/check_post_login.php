@@ -23,18 +23,28 @@
         echo 'email слишком короткий и нет @!';
         exit;
     }
-    else {
-        header('location: /');
-    }
     //пароль
     $salt = "fwafo3pawf90p[-_+)fw02fpo2p3pkl2[k5i";
     $conf_password = md5($salt.$conf_password);
 
     //подключение к бд экспериментальное
     require "db.php";
-    //insert
-    $sql = 'INSERT INTO users(login, password, email, avatar) VALUES(?,?,?,?)';
-    $query = $pdo->prepare($sql);
-    $query->execute([$login, $password, $email, $avatar]);
+
+    $sq1l = 'SELECT id FROM users WHERE login = ?';
+    $query1 = $pdo->prepare($sq1l);
+    $query1->execute([$login]);
+
+    if($query1->rowCount() > 0){
+        echo "пользователь исть!";
+    } else {
+       //insert
+       $sql = 'INSERT INTO users(login, password, email, avatar) VALUES(?,?,?,?)';
+       $query = $pdo->prepare($sql);
+        $query->execute([$login, $conf_password, $email, $avatar]);
+        $_SESSION['login'] = $login;
+         header('Location: /user_personal_account.php');
+    }
+
+
 
 
