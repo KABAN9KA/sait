@@ -14,10 +14,12 @@
     <div class="container">
 
     <h1>ГЛАВНАЯ</h1>
-        <p>sait o ks 2 глазами котов</p>
-        <p> вчера вышло обнова вернули дуст 2 я радЪ</p>
-        <p> а это чисто разрабы када надо убрать вертиго а убрали оверпасс:<img WIDTH="200px" height="200px" src="13244фск.PNG" alt="кот">
-        </p>
+        <div class="text_p">
+            <p>sait o ks 2 глазами котов</p>
+            <p> вчера вышло обнова вернули дуст 2 я радЪ</p>
+            <p> а это чисто разрабы када надо убрать вертиго а убрали оверпасс:<img WIDTH="200px" height="200px" src="13244фск.PNG"alt="кот"></p>
+        </div>
+
         <div class="maph">
             <h2>Карты</h2>
         </div>
@@ -37,7 +39,7 @@
                 foreach ($arMaps as $el) {
                     echo ' <div class="map">
                                 <p>'.$el->name.'</p>
-                                <img src="'.$el->image.'" alt="dust2" width="200px" height="200px">
+                                <img src="img_maps/'.$el->image.'" alt="dust2" width="200px" height="200px">
                                 <p>Followers: '.$el->folowers.'</p>
                             </div>';
                 }

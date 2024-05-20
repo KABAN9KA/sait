@@ -12,31 +12,46 @@
 <?php require_once "blocks/header.php";?>
 <div class="container">
     <div class="nadpis">
-        <h2>Карты</h2>
-        <p> а вот хуй тебе а не карты я не нашел всех png блять<br>
-            главное есть оверпасс а даста нит!</p>
+        <h1>Карты</h1>
     </div>
-
-
     <div class="maps">
         <?php
         //bd
-        //require_once "vhandlog/db.php";
+        require_once "vhandlog/db.php";
 
         //select
-        //$sql = 'SELECT * FROM maps ORDER BY id DESC LIMIT 7';
-        //$query = $pdo->prepare($sql);
-        //$query->execute();
-        //$arMaps = $query->fetchAll(PDO::FETCH_OBJ);
-        //foreach ($arMaps as $el) {
-          //  echo ' <div class="map">
-            //                    <p>'.$el->name.'</p>
-              //                  <img src="'.$el->image.'" alt="dust2" width="200px" height="200px">
-                //                <p>Followers: '.$el->folowers.'</p>
-                  //          </div>';
-        //}
+        $sql = 'SELECT * FROM maps ORDER BY id';
+        $query = $pdo->prepare($sql);
+        $query->execute();
+        $arMaps = $query->fetchAll(PDO::FETCH_OBJ);
+        foreach ($arMaps as $el) {
+            echo ' <div class="map">
+                                <p>'.$el->name.'</p>
+                                <img src="img_maps/'.$el->image.'" alt="dust2" width="200px" height="200px">
+                                <p>Followers: '.$el->folowers.'</p>
+                            </div>';
+        }
         ?>
     </div>
+    <div class="forum">
+        <p>Короче здеся зафигачим завтра или уже сегодня форум</p>
+        <?php
+        if(isset($_SESSION['login'])) {
+            $login = $_SESSION['login'];
+            echo "$login.напиши шонить.<br>";
+            echo '<form action="" method="post" class="">
+            <textarea placeholder="введи своё сообщение"></textarea><br>
+            <button type="submit" class="btn btn-success">Отправить сообщение</button>
+        </form>';
+        }
+        else {
+            echo 'Залогинься чтобы писать сообщения на этом форуме!';
+        }
+        ?>
+
+    </div>
+    <p>ооо много сообщенивое вывода из бд</p>
+
     <?php
 
     ?>

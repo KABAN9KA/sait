@@ -24,8 +24,7 @@
            <img src="uploads/noavatar.png" alt="avatar">
                 <form class="lk_upload" method="post" enctype="multipart/form-data">
                     <label>смена аватара:</label> <input type="file" name="avatar-p" size="10">
-                    <input type="submit" class="btn btn-success" value="Загрузить" />
-                   <button type="submit" class="btn btn-success">Сменить аватар</button
+                    <input type="submit" class="btn btn-success" value="Загрузить"/>
                 </form>
 
             <form action="vhandlog/changepass.php" class="lk_change" method="post">
@@ -39,7 +38,7 @@
     <?php
     if ($_FILES && $_FILES["avatar-p"]["error"]== UPLOAD_ERR_OK)
     {
-        $name = "upload/" . $_FILES["avatar-p"]["name"];
+        $name = "uploads/" . $_FILES["avatar-p"]["name"];
         move_uploaded_file($_FILES["avatar-p"]["tmp_name"], $name);
         echo "Файл загружен";
     }

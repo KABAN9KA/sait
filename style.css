@@ -180,3 +180,13 @@ body {
     text-align: right;
     color: rgba(255, 255, 255, 0.6);
 }
+.text_p p{
+    /*color: #03088c;*/
+    text-decoration: none;
+    transition:all .07s ease-in-out;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 107.9%;
+}
