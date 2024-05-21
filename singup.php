@@ -19,7 +19,7 @@
     <?php require_once "blocks/header.php";?>
         <div class="container1">
             <h1> Регистрация</h1>
-            <form action="vhandlog/check_post_login.php" method="post">
+            <form action="lib/check_post_login.php" method="post">
                 <label class="label-container">Логин:</label> <input class="input-container" type="text" name="login" placeholder="введите логин" ><br>
                 <label class="label-container">Эл.Почта:</label> <input class="input-container" type="email" name="email" placeholder="введите email" ><br>
                 <label class="label-container">пароль:</label> <input class="input-container" type="password" id="password-input" name="password" placeholder="введите пароль"><br>

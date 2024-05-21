@@ -15,7 +15,7 @@
     <?php require_once "blocks/header.php";?>
         <div class="container1">
             <h1> Вход</h1>
-                <form action="vhandlog/auth.php" method="post">
+                <form action="lib/auth.php" method="post">
                     <label class="label-container">Логин:</label> <input class="input-container" type="text" name="login" placeholder="введите логин" ><br>
                     <label class="label-container">Пароль:</label> <input class="input-container" type="password" id="password-input" name="password" placeholder="введите пароль"><br>
                     <label class="label1">Показать пароль</label><input type="checkbox" class="password-checkbox">

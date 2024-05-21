@@ -27,13 +27,13 @@
                     <input type="submit" class="btn btn-success" value="Загрузить"/>
                 </form>
 
-            <form action="vhandlog/changepass.php" class="lk_change" method="post">
+            <form action="lib/changepass.php" class="lk_change" method="post">
                <label> Старый пароль:</label> <input class="input-container" type="password" id="password-input" name="password_old" placeholder="введите старый пароль"><br>
                <label> Новый пароль:</label> <input class="input-container" type="password" id="password-input" name="password_new" placeholder="введите новый пароль"><br>
                 <label> Повторите пароль:</label> <input class="input-container" type="password" id="password-input" name="password_confirm" placeholder="введите новый еще раз пароль"><br>
                <button type="submit" class="btn btn-success">Смненить пароль</button>
             </form>
-          <a style="color: red;" href="vhandlog/logout.php">Выйти</a>
+          <a style="color: red;" href="lib/logout.php">Выйти</a>
        </div>
     <?php
     if ($_FILES && $_FILES["avatar-p"]["error"]== UPLOAD_ERR_OK)

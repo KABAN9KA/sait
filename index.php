@@ -30,7 +30,7 @@
         <div class="maps">
             <?php
                 //bd
-                require_once "vhandlog/db.php";
+                require_once "lib/db.php";
                 //select
                 $sql = 'SELECT * FROM maps ORDER BY id DESC LIMIT 7';
                 $query = $pdo->prepare($sql);

@@ -17,7 +17,7 @@ session_start();
     <?php require_once "blocks/header.php";?>
     <div class="container">
      <h1>Контакты</h1>
-        <form action="check.php" method="post">
+        <form action="lib/check.php" method="post">
             <input type="text" name="username" value="<?=$_SESSION['sUser_name']?>" placeholder="Введите имя ничего страшного" class="form-control">
             <div class="text-danger"> <?=$_SESSION['error_username']?> </div><br>
             <input type="email" name="email" value="<?=$_SESSION['sEmail']?>" placeholder="Введите email ничего страшного" class="form-control">
